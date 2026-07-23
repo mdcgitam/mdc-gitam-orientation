@@ -22,7 +22,7 @@
   --border: rgba(255,255,255,0.10);
   --border-strong: rgba(255,255,255,0.16);
 
-  --font-display: 'Fraunces', serif;
+  --font-display: 'Source Serif 4', serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --ease: cubic-bezier(.16,.84,.44,1);
