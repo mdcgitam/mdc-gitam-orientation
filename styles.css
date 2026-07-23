@@ -220,7 +220,11 @@ section > .container{ width:100%; }
 }
 .section-title em{ font-style: italic; color: var(--blue-500); }
 .section-desc{ color: var(--ink-dim); font-size: 1.05rem; max-width: 520px; }
-.section-tag{ font-size: 1rem; color: var(--ink-dim); }
+.section-tag{
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(2.1rem, 4.2vw, 3.2rem); line-height: 1.08; color: var(--ink);
+}
+.section-tag em{ font-style: italic; color: var(--blue-500); }
 
 /* ============ ABOUT ============ */
 .about{ padding-top: 48px; padding-bottom: 48px; min-height: auto; }
