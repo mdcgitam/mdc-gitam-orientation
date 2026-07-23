@@ -70,6 +70,356 @@ p{ margin:0; }
 }
 @media (max-width: 900px){ .cursor-glow{ display:none; } }
 
+/* ============ ENTRY GATE ============ */
+.entry-gate{
+  position: fixed; inset: 0; z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--navy-950);
+  overflow: hidden;
+  transition: opacity .8s var(--ease), visibility .8s var(--ease), transform .8s var(--ease);
+}
+.entry-gate.entry-gate--hidden{
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.06);
+  pointer-events: none;
+}
+.entry-gate-canvas{ position:absolute; inset:0; width:100%; height:100%; opacity:.6; }
+.entry-gate-glow{
+  position:absolute; top: 50%; left:50%; transform: translate(-50%,-50%);
+  width: 900px; height: 900px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(51,78,172,0.4) 0%, rgba(51,78,172,0.1) 45%, transparent 70%);
+  filter: blur(10px);
+  animation: entryPulse 5s ease-in-out infinite;
+}
+@keyframes entryPulse{
+  0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: .8; }
+  50% { transform: translate(-50%,-50%) scale(1.12); opacity: 1; }
+}
+.entry-gate-grid{
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(218,227,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(218,227,255,0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 75%);
+}
+.entry-gate-inner{
+  position: relative; z-index: 2;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+  padding: 32px;
+}
+.entry-anim{
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .7s var(--ease-soft), transform .7s var(--ease-soft);
+}
+.entry-gate.entry-gate--ready .entry-anim{
+  opacity: 1;
+  transform: translateY(0);
+}
+.entry-gate-eyebrow{
+  display:inline-block;
+  font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--blue-300);
+  border: 1px solid var(--border-strong); padding: 7px 16px; border-radius: 100px;
+  background: var(--surface);
+}
+.entry-gate-title{
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  line-height: 1.08;
+  color: var(--ink);
+  margin: 4px 0 0;
+}
+.entry-gate-title .entry-anim{ display:block; }
+.entry-gate-title em{ color: var(--blue-500); font-style: italic; }
+.entry-gate-sub{
+  max-width: 460px;
+  font-size: .98rem; line-height: 1.6;
+  color: var(--ink-dim);
+  margin: 0;
+}
+.entry-gate-stats{
+  display: flex; align-items: center; gap: 20px;
+  padding-top: 4px;
+}
+.entry-gate-stat{
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.entry-gate-stat span{
+  font-family: var(--font-display);
+  font-size: 1.3rem; color: var(--blue-300);
+}
+.entry-gate-stat em{
+  font-style: normal; font-size: .68rem; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.entry-gate-stat-sep{
+  width: 1px; height: 28px; background: var(--border-strong);
+}
+.entry-gate-btn{
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 1rem; letter-spacing: 0.04em;
+  padding: 18px 40px; border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-strong);
+  color: var(--ink);
+  cursor: pointer;
+  margin-top: 8px;
+  transition: transform .25s var(--ease), background .25s ease, border-color .25s ease;
+}
+.entry-gate-btn:hover{
+  transform: scale(1.06);
+  background: var(--blue-700);
+  border-color: var(--blue-700);
+}
+.entry-gate-btn:active{ transform: scale(0.97); }
+.entry-gate-btn-label{ position: relative; z-index: 1; }
+.entry-gate-btn-ring{
+  position: absolute; inset: -1px; border-radius: 999px;
+  border: 1px solid var(--blue-500);
+  opacity: 0;
+  animation: entryRing 2.2s ease-out infinite;
+}
+@keyframes entryRing{
+  0% { transform: scale(1); opacity: .55; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+.entry-gate-hint{
+  font-size: .75rem; color: var(--ink-faint); letter-spacing: .02em;
+}
+
+/* ============ SPLASH SCREEN ============ */
+/* The panel itself becomes fully opaque almost instantly (fast .2s fade),
+   well before the gate underneath begins its own fade — so the gate's
+   fade only ever reveals this solid panel, never the raw homepage. The
+   slow, elegant motion happens only in what's layered on top of it. */
+.splash{
+  position: fixed; inset: 0; z-index: 1900;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--navy-950);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1);
+  transition: opacity .2s linear, visibility .2s linear;
+}
+.splash.splash--visible{
+  opacity: 1;
+  visibility: visible;
+}
+.splash.splash--hidden{
+  /* Stays fully opaque — and pointer-events:none so clicks can't leak
+     through — until the logo/text have completely finished exiting
+     (~1.2s), then the panel itself dissolves on its own. This is what
+     guarantees the homepage is never visible behind a half-faded panel. */
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.06);
+  pointer-events: none;
+  transition: opacity 1s var(--ease-soft) 1.2s, transform 1.1s var(--ease-soft) 1.2s, visibility 1s var(--ease-soft) 1.2s;
+}
+.splash-glow{
+  position:absolute; top: 50%; left:50%; transform: translate(-50%,-50%) scale(0.8);
+  width: 760px; height: 760px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(51,78,172,0.45) 0%, rgba(51,78,172,0.1) 45%, transparent 70%);
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1.6s var(--ease-soft);
+}
+.splash.splash--visible .splash-glow{
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+  animation: splashGlowPulse 4s ease-in-out .8s infinite;
+}
+.splash.splash--hidden .splash-glow{
+  opacity: 0;
+  transform: translate(-50%,-50%) scale(1.5);
+  transition: opacity 1s var(--ease-soft) 1.2s, transform 1.1s var(--ease-soft) 1.2s;
+}
+@keyframes splashGlowPulse{
+  0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: .75; }
+  50% { transform: translate(-50%,-50%) scale(1.1); opacity: 1; }
+}
+.splash-inner{
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; align-items: center;
+}
+/* Both phases occupy the same fixed stage, stacked and centered, so the
+   letter build-up and the logo/wordmark crossfade in place with zero
+   layout shift between them. */
+.splash-stage{
+  position: relative;
+  width: min(90vw, 520px);
+  height: clamp(200px, 30vh, 260px);
+}
+/* .splash-mark's width is set entirely by .splash-letters (the only
+   in-flow child) — .splash-fullname is absolutely positioned beneath it
+   at the exact same width, so the caption's justified edges land flush
+   with the M and C above regardless of the caption's natural text width. */
+.splash-mark{
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.splash-letters{
+  position: relative;
+  display: flex; align-items: center;
+}
+.splash-letter + .splash-letter{ margin-left: -0.03em; }
+.splash-letter{
+  display: inline-block;
+  font-family: 'Montserrat', var(--font-body);
+  font-weight: 700;
+  font-size: clamp(3.4rem, 11vw, 7rem);
+  line-height: 1;
+  color: var(--ink);
+  opacity: 0;
+  text-shadow: 0 0 0 rgba(112,143,209,0);
+  transition: opacity .5s var(--ease-soft), transform .8s cubic-bezier(.16,.8,.2,1), text-shadow .6s var(--ease-soft);
+}
+/* M settles alone from the left; D and C slide in from the right and
+   stop the instant they land flush against the letter before them. */
+.splash-letter[data-letter="M"]{ transform: translateX(-65vw); }
+.splash-letter[data-letter="D"]{ transform: translateX(65vw); }
+.splash-letter[data-letter="C"]{ transform: translateX(80vw); }
+.splash-letter.is-in{
+  opacity: 1;
+  transform: translateX(0);
+  text-shadow: 0 0 32px rgba(112,143,209,0.45);
+}
+/* Matches the real MDC wordmark: same typeface, weight and case as the
+   logo (not uppercase, not stretched). Sized so the three words' own
+   natural width nearly fills the row on its own — "space-between" is
+   only there to nudge "Meta"/"Communities" flush to the edges under M
+   and C, not to stretch big artificial gaps between the words. */
+.splash-fullname{
+  position: absolute; top: 100%; left: 0; right: 0;
+  margin-top: 4px;
+  /* The big "M"'s own glyph has a small left side-bearing (a gap baked
+     into the font between its box edge and where its ink actually
+     starts) — at this large a size that gap is a few real pixels, so
+     lining "Meta" up flush with the box edge alone left it looking
+     shifted left of the big M's ink. This nudges it to compensate. */
+  padding-left: clamp(2px, 0.35vw, 4px);
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: 'Montserrat', var(--font-body);
+  font-weight: 700;
+  font-size: clamp(.7rem, 1.9vw, 1.05rem);
+  color: var(--ink);
+  white-space: nowrap;
+}
+.splash-fullname-word{
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(8px);
+  transition: opacity .6s var(--ease-soft), filter .6s var(--ease-soft), transform .6s var(--ease-soft);
+}
+.splash-fullname-word.is-in{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+.splash.splash--reveal .splash-mark{
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity .6s var(--ease-soft), transform .6s var(--ease-soft);
+}
+.splash-phase2{
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 22px;
+}
+/* "Welcome To" and the logo fade in together, in one crossfade, exactly
+   when "splash--reveal" lands — JS holds the assembled "MDC" + "Meta
+   Developer Communities" fully visible for an extra ~1s after they
+   finish landing before triggering this crossfade, so that mark gets a
+   beat to be read before the swap happens. */
+.splash-welcome{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(2.1rem, 4.8vw, 3rem);
+  color: var(--blue-500);
+  letter-spacing: .06em;
+  opacity: 0;
+  filter: blur(6px);
+  transform: translate(-11px, 10px);
+  transition: opacity .9s var(--ease-soft), transform .9s var(--ease-soft),
+              filter .9s var(--ease-soft), letter-spacing .9s var(--ease-soft);
+  /* Compensates for the -6px translateY it rests at once revealed (see
+     below), so the Welcome→Logo gap matches the Logo→Recruits gap
+     instead of ending up 6px larger. */
+  margin-bottom: -6px;
+}
+.splash.splash--reveal .splash-welcome{
+  opacity: 1; transform: translate(-11px, -6px); filter: blur(0); letter-spacing: .02em;
+}
+.splash.splash--hidden .splash-welcome{
+  opacity: 0; transform: translate(-11px, -16px); filter: blur(5px);
+  transition: opacity .65s var(--ease-soft), transform .65s var(--ease-soft), filter .65s var(--ease-soft);
+}
+.splash-logo{
+  width: clamp(170px, 27vw, 270px);
+  opacity: 0;
+  /* The mark's ink is visually left-heavy (the open "C" carries less
+     weight than the solid "M"/"D"), so every transform below includes a
+     small rightward nudge to optically center it under "Welcome To". */
+  transform: translateX(4%) translateY(-260px) scale(0.85);
+  filter: drop-shadow(0 0 0 rgba(112,143,209,0));
+  transition: filter 1.4s ease;
+}
+.splash.splash--reveal .splash-logo{
+  animation: splashLogoDrop 1.05s cubic-bezier(.2,.9,.35,1.15) .35s both;
+  filter: drop-shadow(0 0 14px rgba(112,143,209,0.25));
+}
+.splash-logo.splash-logo--floating{
+  animation: splashLogoFloat 4.2s ease-in-out infinite;
+}
+.splash.splash--hidden .splash-logo{
+  /* A brief bloom (brighter, slightly larger) before settling into the
+     fade — reads as the logo "letting go" rather than just vanishing. */
+  animation: splashLogoExit 1.1s var(--ease-soft) .1s both;
+}
+@keyframes splashLogoExit{
+  0%   { transform: translateX(4%) scale(1) translateY(0); opacity: 1; filter: drop-shadow(0 0 14px rgba(112,143,209,0.25)); }
+  32%  { transform: translateX(4%) scale(1.07) translateY(-4px); opacity: 1; filter: drop-shadow(0 0 22px rgba(112,143,209,0.4)); }
+  100% { transform: translateX(4%) scale(0.9) translateY(-14px); opacity: 0; filter: drop-shadow(0 0 4px rgba(112,143,209,0.05)); }
+}
+@keyframes splashLogoDrop{
+  0%   { transform: translateX(4%) translateY(-260px) scale(0.85); opacity: 0; }
+  45%  { opacity: 1; }
+  62%  { transform: translateX(4%) translateY(0) scale(1.06); opacity: 1; }
+  78%  { transform: translateX(4%) translateY(-18px) scale(0.98); }
+  90%  { transform: translateX(4%) translateY(0) scale(1.015); }
+  100% { transform: translateX(4%) translateY(0) scale(1); opacity: 1; }
+}
+@keyframes splashLogoFloat{
+  0%, 100% { transform: translateX(4%) scale(1) translateY(0); }
+  50% { transform: translateX(4%) scale(1.025) translateY(-7px); }
+}
+.splash-recruits{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.7vw, 1.5rem);
+  letter-spacing: .04em;
+  color: var(--blue-500);
+  opacity: 0;
+  transform: translate(19px, 8px);
+  /* Waits for the logo's own drop (.35s delay + 1.05s) to finish before
+     appearing, so it reads as a caption settling in under it. */
+  transition: opacity .7s var(--ease-soft) 1.1s, transform .7s var(--ease-soft) 1.1s;
+}
+.splash.splash--reveal .splash-recruits{
+  opacity: 1;
+  transform: translate(19px, 0);
+}
+.splash.splash--hidden .splash-recruits{
+  opacity: 0;
+  transform: translate(19px, -6px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+
 /* ============ NAV ============ */
 .nav{
   position: fixed; top:0; left:0; right:0; z-index: 500;

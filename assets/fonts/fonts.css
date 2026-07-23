@@ -23,3 +23,11 @@
   font-display: swap;
   src: url('sourceserif4-italic.woff2') format('woff2-variations'), url('sourceserif4-italic.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('montserrat-700.woff2') format('woff2');
+}

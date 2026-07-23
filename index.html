@@ -14,6 +14,61 @@
 <div class="grain"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 
+<audio id="bgMusic" src="bgmusic.mp3" preload="auto"></audio>
+
+<div class="entry-gate" id="entryGate">
+  <canvas id="entryCanvas" class="entry-gate-canvas"></canvas>
+  <div class="entry-gate-glow"></div>
+  <div class="entry-gate-grid"></div>
+  <div class="entry-gate-inner">
+    <span class="entry-gate-eyebrow entry-anim" style="transition-delay:.05s">MDC &middot; GITAM</span>
+    <h1 class="entry-gate-title">
+      <span class="entry-anim" style="transition-delay:.15s">Enter the</span>
+      <span class="entry-anim" style="transition-delay:.28s"><em>Orientation</em></span>
+    </h1>
+    <p class="entry-gate-sub entry-anim" style="transition-delay:.38s">Academic Year 2026&ndash;27 &middot; a full year of hackathons, projects, and mentorship starts here.</p>
+
+    <div class="entry-gate-stats entry-anim" style="transition-delay:.48s">
+      <div class="entry-gate-stat"><span>2023</span><em>Founded</em></div>
+      <div class="entry-gate-stat-sep"></div>
+      <div class="entry-gate-stat"><span>7</span><em>Domains</em></div>
+      <div class="entry-gate-stat-sep"></div>
+      <div class="entry-gate-stat"><span>1</span><em>Community</em></div>
+    </div>
+
+    <button class="entry-gate-btn entry-anim" id="entryGateBtn" style="transition-delay:.6s">
+      <span class="entry-gate-btn-ring"></span>
+      <span class="entry-gate-btn-label">Click to Enter</span>
+    </button>
+    <span class="entry-gate-hint entry-anim" style="transition-delay:.72s">Sound on &middot; best with volume up</span>
+  </div>
+</div>
+
+<div class="splash" id="splash">
+  <div class="splash-glow"></div>
+  <div class="splash-inner">
+    <div class="splash-stage">
+      <div class="splash-mark" id="splashMark">
+        <div class="splash-letters" id="splashLetters">
+          <span class="splash-letter" data-letter="M">M</span>
+          <span class="splash-letter" data-letter="D">D</span>
+          <span class="splash-letter" data-letter="C">C</span>
+          <div class="splash-fullname" id="splashFullname">
+            <span class="splash-fullname-word">Meta</span>
+            <span class="splash-fullname-word">Developer</span>
+            <span class="splash-fullname-word">Communities</span>
+          </div>
+        </div>
+      </div>
+      <div class="splash-phase2">
+        <span class="splash-welcome" id="splashWelcome">Welcome To</span>
+        <img src="assets/mdclogo-white.png" alt="MDC — Meta Developer Communities" class="splash-logo" id="splashLogo">
+        <span class="splash-recruits" id="splashRecruits">New Recruits &middot; AY 2026&ndash;27</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#top" class="nav-brand"><img src="assets/mdclogo-white.png" alt="MDC — Meta Developer Communities" class="nav-logo"></a>
