@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MDC GITAM — Orientation AY 26-27</title>
+<meta name="description" content="Meta Developer Communities, GITAM — Orientation for the newly inducted class of AY 2026-27." />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand"><img src="assets/mdclogo-white.png" alt="MDC — Meta Developer Communities" class="nav-logo"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-idx="01">About</a></li>
+      <li><a href="#timeline" data-idx="02">Timeline</a></li>
+      <li><a href="#mentors" data-idx="03">Mentors</a></li>
+      <li><a href="#executive" data-idx="04">Executive</a></li>
+      <li><a href="#domains" data-idx="05">Domains</a></li>
+      <li><a href="#guidelines" data-idx="06">Rules</a></li>
+      <li><a href="#soc" data-idx="07">Eligibility</a></li>
+      <li><a href="#tenure" data-idx="08">Tenure</a></li>
+      <li><a href="#los" data-idx="09">LOS</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-bg">
+    <canvas id="fieldCanvas"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-content">
+    <p class="eyebrow reveal-line">Orientation &middot; Academic Year 2026&ndash;27</p>
+    <h1 class="hero-title">
+      <span class="line" data-line="1">Welcome to the</span>
+      <span class="line" data-line="2">room where builders</span>
+      <span class="line" data-line="3"><em>become leaders.</em></span>
+    </h1>
+    <p class="hero-sub reveal-fade">You've just joined Meta Developer Communities — GITAM's student-driven network of engineers, designers, and storytellers shipping real work, mentored by people who've done it before.</p>
+    <div class="hero-actions reveal-fade">
+      <a href="#timeline" class="btn btn-primary magnetic"><span>Begin the Journey</span></a>
+      <a href="#domains" class="btn btn-ghost magnetic"><span>Explore Domains</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-index">
+      <span class="section-index">01</span>
+      <span class="section-tag">About MDC</span>
+    </div>
+    <div class="about-copy">
+      <p class="lead reveal-up">Meta Developer Communities was inaugurated on <strong>4th January 2023</strong> as Meta Developer Circles, in official partnership with Meta. When Meta discontinued its global Developer Circles program in 2024, we didn't dissolve — <strong>we evolved.</strong></p>
+      <p class="reveal-up">Rebranded and evolved as an independent, student-driven network, MDC continues the same founding mission: technical collaboration, peer-to-peer learning, and mentorship from people who push you further than you'd push yourself. Today MDC operates in partnership with the <strong>GITAM Career Guidance Centre</strong> and <strong>Student Life</strong>, giving every project, hackathon, and initiative real institutional weight.</p>
+      <div class="about-stats reveal-up">
+        <div class="stat"><span class="stat-num" data-count="2023">0</span><span class="stat-label">Founded</span></div>
+        <div class="stat"><span class="stat-num" data-count="7">0</span><span class="stat-label">Domains</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section" id="timeline">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-index">02</span>
+      <h2 class="section-title">The Journey<br><em>So Far</em></h2>
+      <p class="section-desc">From a Meta-affiliated circle to an independent institution within GITAM — the story of how MDC came to be.</p>
+    </div>
+    <div class="timeline" id="timelineTrack">
+      <div class="timeline-line"><div class="timeline-progress" id="timelineProgress"></div></div>
+
+      <div class="tl-item reveal-up">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Jan 2023</div>
+        <div class="tl-card">
+          <h3>Inaugurated as Meta Developer Circles</h3>
+          <p>Launched in official association with Meta (formerly Facebook), planting the first seed of a developer-first community at GITAM.</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal-up">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2024</div>
+        <div class="tl-card">
+          <h3>Meta discontinues Developer Circles globally</h3>
+          <p>Rather than shutting down, the community chose to evolve — redefining its identity while protecting its founding vision.</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal-up">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2024 &rarr; Present</div>
+        <div class="tl-card">
+          <h3>Evolved as Meta Developer Communities</h3>
+          <p>An independent, self-sustained network — operating in collaboration with GCGC and Student Life, mentored by faculty, and led entirely by students.</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal-up">
+        <div class="tl-dot"></div>
+        <div class="tl-date">AY 2026&ndash;27</div>
+        <div class="tl-card">
+          <h3>Your chapter begins</h3>
+          <p>Seven domains. A full year of hackathons, projects, and events. And a Certification Ceremony waiting at the finish line on 09th April 2027.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENTORS -->
+<section class="mentors" id="mentors">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-index">03</span>
+      <h2 class="section-title">Mentors</h2>
+      <p class="section-desc">MDC operates under the mentorship of faculty from GCGC and Student Life, with strategic counsel from the club's own institutional memory.</p>
+    </div>
+    <div class="mentor-grid">
+      <div class="mentor-card reveal-up">
+        <div class="mentor-photo"><img src="assets/photos/rojeena.JPG" alt="Dr. Rojeena Mathew"></div>
+        <span class="mentor-role">GCGC Mentor</span>
+        <h3>Dr. Rojeena Mathew</h3>
+        <p class="mentor-title">Director&ndash;TMCG, GCGC</p>
+        <p class="mentor-desc">Guides MDC's operations and ensures every initiative runs smoothly.</p>
+      </div>
+      <div class="mentor-card reveal-up">
+        <div class="mentor-photo"><img src="assets/photos/jitendra.jpeg" alt="Mr. Jitendra Dasari"></div>
+        <span class="mentor-role">Student Life Mentor</span>
+        <h3>Mr. Jitendra Dasari</h3>
+        <p class="mentor-title">Assistant Manager, Student Life</p>
+        <p class="mentor-desc">Keeps MDC aligned with the university's student development framework.</p>
+      </div>
+      <div class="mentor-card reveal-up mentor-card--accent">
+        <div class="mentor-photo"><img src="assets/photos/VINNAKOTA NITISH RAJ.jpg" alt="Mr. Nitish Raj Vinnakota"></div>
+        <span class="mentor-role">Principal Advisor</span>
+        <h3>Mr. Nitish Raj Vinnakota</h3>
+        <p class="mentor-title">Ex-President, MDC &middot; #ForeverPresident</p>
+        <p class="mentor-desc">Bridges past achievements with future growth as MDC's institutional memory.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXECUTIVE BODY -->
+<section class="executive" id="executive">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-index">04</span>
+      <h2 class="section-title">Executive Committee<br><em>2026&ndash;27</em></h2>
+      <p class="section-desc">The people steering MDC this year.</p>
+    </div>
+
+    <div class="hierarchy reveal-up">
+      <div class="hier-tier"><span class="hier-num">01</span><span>Leadership Body</span></div>
+      <div class="hier-arrow">&rarr;</div>
+      <div class="hier-tier"><span class="hier-num">02</span><span>Executive Body</span></div>
+      <div class="hier-arrow">&rarr;</div>
+      <div class="hier-tier"><span class="hier-num">03</span><span>Domain Leads</span></div>
+      <div class="hier-arrow">&rarr;</div>
+      <div class="hier-tier"><span class="hier-num">04</span><span>Members</span></div>
+    </div>
+
+    <h3 class="exec-group-title reveal-up">Leadership Body</h3>
+    <div class="exec-grid exec-grid--2 exec-grid--compact">
+      <div class="exec-card exec-card--lg reveal-up">
+        <div class="exec-photo"><img src="assets/photos/Hasini.jpg" alt="Hasini Dandu"></div>
+        <div class="exec-info">
+          <span class="exec-position">President</span>
+          <h4 class="exec-name">Hasini Dandu</h4>
+          <p class="exec-bio">Leading MDC's vision and direction for AY 2026&ndash;27.</p>
+        </div>
+      </div>
+      <div class="exec-card exec-card--lg reveal-up">
+        <div class="exec-photo"><img src="assets/photos/Akash.png" alt="Akash Kishan Karri"></div>
+        <div class="exec-info">
+          <span class="exec-position">Vice President</span>
+          <h4 class="exec-name">Akash Kishan Karri</h4>
+          <p class="exec-bio">Partnering on strategy and driving execution across the club.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="exec-group-title reveal-up">Executive Body</h3>
+    <div class="exec-grid exec-grid--4">
+      <div class="exec-card reveal-up">
+        <div class="exec-photo"><img src="assets/photos/Tanishq.jpeg" alt="Kundrapu Tanishq"></div>
+        <div class="exec-info">
+          <span class="exec-position">Secretary</span>
+          <h4 class="exec-name">Kundrapu Tanishq</h4>
+          <p class="exec-bio">Keeping MDC's records, communication, and operations on track.</p>
+        </div>
+      </div>
+      <div class="exec-card reveal-up">
+        <div class="exec-photo"><img src="assets/photos/Srinivas.jpg" alt="Srinivas Katragadda"></div>
+        <div class="exec-info">
+          <span class="exec-position">Head of Operations</span>
+          <h4 class="exec-name">Srinivas Katragadda</h4>
+          <p class="exec-bio">Coordinating events, logistics, and day-to-day operations.</p>
+        </div>
+      </div>
+      <div class="exec-card reveal-up">
+        <div class="exec-photo"><img src="assets/photos/Harsha.jpeg" alt="Aki Sri Harsha"></div>
+        <div class="exec-info">
+          <span class="exec-position">Technical Head</span>
+          <h4 class="exec-name">Aki Sri Harsha</h4>
+          <p class="exec-bio">Steering the technical domains and their execution.</p>
+        </div>
+      </div>
+      <div class="exec-card reveal-up">
+        <div class="exec-photo"><img src="assets/photos/Likhita.jpg" alt="Likhita Mannem"></div>
+        <div class="exec-info">
+          <span class="exec-position">Creative Head</span>
+          <h4 class="exec-name">Likhita Mannem</h4>
+          <p class="exec-bio">Shaping MDC's creative direction and visual identity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOMAINS -->
+<section class="domains" id="domains">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-index">05</span>
+      <h2 class="section-title">Domains</h2>
+      <p class="section-desc">Seven domains. Two disciplines. One community. Every member belongs to a domain that shapes their skills, responsibilities, and growth throughout the year.</p>
+    </div>
+
+    <div class="domain-tabs">
+      <button class="domain-tab active" data-filter="technical">Technical</button>
+      <button class="domain-tab" data-filter="creative">Creative</button>
+    </div>
+
+    <div class="domain-grid" id="domainGrid">
+
+      <article class="domain-card" data-cat="technical">
+        <div class="domain-num">01</div>
+        <h3>Competitive Programming</h3>
+        <p class="domain-what">Hackathons and coding contests that sharpen problem-solving under pressure.</p>
+        <ul class="domain-list">
+          <li>4+ events yearly, including <strong>Meta Code Quest 2.0 Hackathon Series</strong>.</li>
+          <li>Compiles the yearly hackathon report.</li>
+          <li>Builds contest strategy and event-ops skills.</li>
+        </ul>
+      </article>
+
+      <article class="domain-card" data-cat="technical">
+        <div class="domain-num">02</div>
+        <h3>DataVerse</h3>
+        <p class="domain-what">MDC's data science wing — shipping end-to-end data projects.</p>
+        <ul class="domain-list">
+          <li>3+ offline events per year.</li>
+          <li>Full project cycle with 3 review checkpoints.</li>
+          <li>Hands-on skills in pipelines, modeling, insight.</li>
+        </ul>
+      </article>
+
+      <article class="domain-card" data-cat="technical">
+        <div class="domain-num">03</div>
+        <h3>WebArc</h3>
+        <p class="domain-what">Architects of MDC's web presence — shipping production-grade projects.</p>
+        <ul class="domain-list">
+          <li>3+ events per year.</li>
+          <li>Structured pipeline with 3 review checkpoints.</li>
+          <li>Real experience with modern stacks, code review.</li>
+        </ul>
+      </article>
+
+      <article class="domain-card" data-cat="creative">
+        <div class="domain-num">04</div>
+        <h3>Content</h3>
+        <p class="domain-what">The voice of MDC — turning events into stories.</p>
+        <ul class="domain-list">
+          <li>Content for WhatsApp, Instagram, LinkedIn, Email.</li>
+          <li>Owns MoMs, Annual Event Report, ACE Award.</li>
+          <li>Sharpens copywriting and cross-platform storytelling.</li>
+        </ul>
+      </article>
+
+      <article class="domain-card" data-cat="creative">
+        <div class="domain-num">05</div>
+        <h3>Design</h3>
+        <p class="domain-what">The visual identity behind everything MDC ships.</p>
+        <ul class="domain-list">
+          <li>3 posters per event: Instagram, TV, A3.</li>
+          <li>Designs templates for every official report.</li>
+          <li>Builds a real design system, not one-offs.</li>
+        </ul>
+      </article>
+
+      <article class="domain-card" data-cat="creative">
+        <div class="domain-num">06</div>
+        <h3>Photography</h3>
+        <p class="domain-what">Captures every moment — in stills and motion.</p>
+        <ul class="domain-list">
+          <li>6&ndash;7 reels across the academic year.</li>
+          <li>5&ndash;6 best photos per event, plus year-end video.</li>
+          <li>Hands-on growth in photo and video storytelling.</li>
+        </ul>
+      </article>
+
+      <article class="domain-card" data-cat="creative">
+        <div class="domain-num">07</div>
+        <h3>Public Relations</h3>
+        <p class="domain-what">Grows MDC's presence at every touchpoint.</p>
+        <ul class="domain-list">
+          <li>+400 Instagram, +50 LinkedIn followers target.</li>
+          <li>Offline promotion at 50%+ of events.</li>
+          <li>Supports Photography on reels and creative input.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMIC BREAKS -->
+<section class="breaks" id="breaks">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-index">06</span>
+      <h2 class="section-title">Semester Exam breaks,<br><em>respected.</em></h2>
+      <p class="section-desc">MDC pauses its schedule around sessional exams so academics always come first.</p>
+    </div>
+
+    <div class="break-grid break-grid--single">
+      <div class="break-card reveal-up">
+        <h3>2nd, 3rd &amp; 4th Year</h3>
+        <table class="break-table">
+          <thead><tr><th></th><th>Odd Semester</th><th>Even Semester</th></tr></thead>
+          <tbody>
+            <tr><td>Sessional 1</td><td>Aug 12 &ndash; Aug 28</td><td>Jan 21 &ndash; Feb 05</td></tr>
+            <tr><td>Sessional 2</td><td>Nov 04 &ndash; Nov 20</td><td>From April 9</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RULES AND REGULATIONS -->
+<section class="guidelines" id="guidelines">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-index">07</span>
+      <h2 class="section-title">Rules and<br><em>Regulations.</em></h2>
+      <p class="section-desc">A community runs on trust. Here's what's expected of every member — kept simple, not buried in fine print.</p>
+    </div>
+
+    <div class="guide-grid guide-grid--2col">
+      <div class="guide-card reveal-up">
+        <div class="guide-icon">01</div>
+        <h3>Conduct</h3>
+        <p>Represent MDC with dignity — no negativity about the club in front of students, faculty, or dignitaries. Confidentiality on internal plans and strategy is non-negotiable. Respect every member; no false information, no backbiting.</p>
+      </div>
+      <div class="guide-card reveal-up">
+        <div class="guide-icon">02</div>
+        <h3>Communication</h3>
+        <p>Respond to club communications within the stipulated time. Group chats are a no-message zone from <strong>11:00 PM to 5:00 AM</strong>, except genuine urgency.</p>
+      </div>
+      <div class="guide-card reveal-up">
+        <div class="guide-icon">03</div>
+        <h3>Leave Policy</h3>
+        <p>Notify your Domain Lead at least <strong>48 hours</strong> in advance if you can't attend. In genuine emergencies, <strong>4 hours'</strong> notice is acceptable. Approval sits with the Executive Body.</p>
+      </div>
+      <div class="guide-card reveal-up">
+        <div class="guide-icon">04</div>
+        <h3>Termination Grounds</h3>
+        <p>Consistently unfulfilled responsibilities, 3 consecutive unexcused absences, or violation of MDC's code of conduct can result in removal — decided at the Executive Body's discretion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATE ELIGIBILITY -->
+<section class="soc" id="soc">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-index">08</span>
+      <h2 class="section-title">Certificate<br><em>Eligibility.</em></h2>
+      <p class="section-desc">Certificates are earned, not automatic. Even if minimum criteria are met, MDC reserves the right to withhold a certificate if contribution falls below expected standards.</p>
+    </div>
+
+    <div class="guide-grid">
+      <div class="guide-card reveal-up">
+        <div class="guide-icon">01</div>
+        <h3>Attendance Requirement</h3>
+        <p>Maintain <strong>75% overall attendance</strong> across Events, Domain Meetings, and Core Team Meetings — with 50%+ encouraged in each category individually.</p>
+      </div>
+      <div class="guide-card reveal-up">
+        <div class="guide-icon">02</div>
+        <h3>Domain Requirement</h3>
+        <p>Deliver on your domain's core tasks — events organized, projects shipped, and reviews cleared on schedule — as laid out for your domain above.</p>
+      </div>
+      <div class="guide-card reveal-up">
+        <div class="guide-icon">03</div>
+        <h3>Statement of Contribution</h3>
+        <p>Submit your SOC on MDC's standard template by <strong>03rd April 2027</strong>, documenting your tasks, initiatives, and impact — the official record considered for certification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TENURE -->
+<section class="tenure" id="tenure">
+  <div class="container">
+    <div class="section-head section-head--light">
+      <span class="section-index">09</span>
+      <h2 class="section-title">The tenure,<br><em>closed with honor.</em></h2>
+      <p class="section-desc">AY 2026&ndash;27 comes full circle with a formal Certification Ceremony recognizing everyone who showed up and delivered.</p>
+    </div>
+
+    <div class="tenure-grid">
+      <div class="tenure-card tenure-card--date reveal-up">
+        <span class="tenure-label">Certification Ceremony</span>
+        <span class="tenure-big">09<span class="tenure-month">April<br>2027</span></span>
+        <p>Physical certificates presented in person by MDC's mentors — a formal close to the academic year.</p>
+      </div>
+      <div class="tenure-card reveal-up">
+        <span class="tenure-label">Closing Process</span>
+        <p>Certification is gated on attendance (75%+), domain deliverables, and a submitted Statement of Contribution — all reviewed before certificates are finalized.</p>
+      </div>
+      <div class="tenure-card reveal-up">
+        <span class="tenure-label">Special Recognition Awards</span>
+        <ul class="tenure-awards">
+          <li>🏆 Best Core Team Member</li>
+          <li>🏆 Best Technical Member</li>
+          <li>🏆 Best Non-Technical Member</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOS -->
+<section class="los" id="los">
+  <div class="container los-grid">
+    <div class="los-copy">
+      <span class="section-index">10</span>
+      <h2 class="section-title">Letter of<br><em>Selection.</em></h2>
+      <p class="section-desc">The Letter of Selection is MDC's formal, signed confirmation that you're officially part of the community.</p>
+      <ul class="los-list">
+        <li><strong>What it is</strong> — an official letter issued by MDC confirming your selection and role within the community.</li>
+        <li><strong>Who receives it</strong> — every newly selected member, right at the start of their MDC journey.</li>
+        <li><strong>How it works</strong> — the club issues the letter, and the member signs to accept and acknowledge it.</li>
+        <li><strong>Why it matters</strong> — it stands as an official, signed record of your selection into MDC.</li>
+      </ul>
+    </div>
+    <div class="los-visual reveal-up">
+      <div class="los-doc">
+        <div class="los-doc-header">
+          <span>MDC · GITAM</span>
+          <span>Letter of Selection</span>
+        </div>
+        <div class="los-doc-lines">
+          <div></div><div></div><div class="short"></div>
+          <div></div><div class="short"></div>
+        </div>
+        <div class="los-doc-sign">
+          <span>Signature</span>
+          <div class="sign-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="closing">
+  <div class="container">
+    <p class="closing-eyebrow reveal-up">Welcome aboard</p>
+    <h2 class="closing-title reveal-up">Now go <em>build</em><br>something worth remembering.</h2>
+    <p class="closing-sub reveal-up">Everything above is your map for AY 2026&ndash;27. What you make of it is up to you.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <img src="assets/mdclogo-white.png" alt="MDC — Meta Developer Communities" class="footer-logo">
+    <p>GITAM Deemed to be University</p>
+    <p class="footer-sub">In collaboration with GITAM Career Guidance Centre &amp; Student Life</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
