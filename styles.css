@@ -210,6 +210,14 @@ p{ margin:0; }
   opacity: 1;
   visibility: visible;
 }
+.splash-grid{
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(218,227,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(218,227,255,0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 75%);
+}
 .splash.splash--hidden{
   /* Stays fully opaque — and pointer-events:none so clicks can't leak
      through — until the logo/text have completely finished exiting
@@ -371,7 +379,7 @@ p{ margin:0; }
 }
 .splash.splash--reveal .splash-logo{
   animation: splashLogoDrop 1.05s cubic-bezier(.2,.9,.35,1.15) .35s both;
-  filter: drop-shadow(0 0 14px rgba(112,143,209,0.25));
+  filter: drop-shadow(0 0 24px rgba(112,143,209,0.44));
 }
 .splash-logo.splash-logo--floating{
   animation: splashLogoFloat 4.2s ease-in-out infinite;
@@ -382,8 +390,8 @@ p{ margin:0; }
   animation: splashLogoExit 1.1s var(--ease-soft) .1s both;
 }
 @keyframes splashLogoExit{
-  0%   { transform: translateX(4%) scale(1) translateY(0); opacity: 1; filter: drop-shadow(0 0 14px rgba(112,143,209,0.25)); }
-  32%  { transform: translateX(4%) scale(1.07) translateY(-4px); opacity: 1; filter: drop-shadow(0 0 22px rgba(112,143,209,0.4)); }
+  0%   { transform: translateX(4%) scale(1) translateY(0); opacity: 1; filter: drop-shadow(0 0 24px rgba(112,143,209,0.44)); }
+  32%  { transform: translateX(4%) scale(1.07) translateY(-4px); opacity: 1; filter: drop-shadow(0 0 34px rgba(112,143,209,0.6)); }
   100% { transform: translateX(4%) scale(0.9) translateY(-14px); opacity: 0; filter: drop-shadow(0 0 4px rgba(112,143,209,0.05)); }
 }
 @keyframes splashLogoDrop{
